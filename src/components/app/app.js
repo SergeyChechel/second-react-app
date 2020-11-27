@@ -3,9 +3,11 @@ import {Col, Row, Container} from 'reactstrap';
 import Header from '../header';
 import RandomChar from '../randomChar';
 import ErrorMessage from '../errorMessage';
-import CharacterPage from '../characterPage';
-import ItemList from '../itemList';
-import ItemDetails from '../itemDetails';
+import CharacterPage from '../pages/characterPage';
+import HousePage from '../pages/housePage';
+import BookPage from '../pages/bookPage';
+// import ItemList from '../itemList';
+// import ItemDetails from '../itemDetails';
 import GotService from '../../services/gotService';
 
 import './app.css';
@@ -20,7 +22,6 @@ export default class App extends Component {
     }
 
     componentDidCatch() {
-        console.log('error');
         this.setState({
             error: true
         });
@@ -57,7 +58,9 @@ export default class App extends Component {
                         </Col>
                     </Row>
                     <CharacterPage/>
-                    <Row>
+                    <HousePage/>
+                    <BookPage/>
+                    {/* <Row>
                         <Col md='6'>
                             <ItemList 
                                 onItemSelected={this.onItemSelected}
@@ -78,7 +81,7 @@ export default class App extends Component {
                         <Col md='6'>
                             <ItemDetails charId={this.state.selectedChar}/>
                         </Col>
-                    </Row>
+                    </Row> */}
                 </Container>
             </>
         );

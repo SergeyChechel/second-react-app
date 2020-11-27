@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
-import ItemList from '../itemList';
-import ItemDetails, {Field} from '../itemDetails';
-import ErrorMessage from '../errorMessage';
-import GotService from '../../services/gotService';
-import RowBlock from '../rowBlock';
+import ItemList from '../../itemList';
+import ItemDetails, {Field} from '../../itemDetails';
+import ErrorMessage from '../../errorMessage';
+import GotService from '../../../services/gotService';
+import RowBlock from '../../rowBlock';
 
 export default class CharacterPage extends Component {
     gotService = new GotService();
@@ -13,9 +13,9 @@ export default class CharacterPage extends Component {
         error: false
     }
 
-    onHouseSelected = (id) => {
+    onCharSelected = (id) => {
         this.setState({
-            selectedHouse: id
+            selectedChar: id
         });
     }
 
@@ -45,7 +45,6 @@ export default class CharacterPage extends Component {
                 <Field field='culture' label='Culture'/>
             </ItemDetails>
         );
-        console.log(charDetails);
 
         return (
             <RowBlock left={charList} right={charDetails}/>

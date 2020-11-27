@@ -3,7 +3,6 @@ import GotService from '../../services/gotService';
 import './itemDetails.css';
 
 const Field = ({item, field, label}) => {
-    console.log(item[field]);
     return (
         <li className="list-group-item d-flex justify-content-between">
             <span className="term">{label}</span>
@@ -38,7 +37,6 @@ export default class ItemDetails extends Component {
         }
         this.gotService.getItem(itemId, type)
             .then(item => {
-                console.log(this);
                 this.setState({item})
             });
         // this.foo.bar = 0;
