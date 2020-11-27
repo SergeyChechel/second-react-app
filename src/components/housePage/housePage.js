@@ -13,9 +13,9 @@ export default class CharacterPage extends Component {
         error: false
     }
 
-    onCharSelected = (id) => {
+    onHouseSelected = (id) => {
         this.setState({
-            selectedChar: id
+            selectedHouse: id
         });
     }
 

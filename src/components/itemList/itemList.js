@@ -4,7 +4,7 @@ import './itemList.css';
 export default class ItemList extends Component {
 
     state = {
-        charList: null
+        itemList: null
     };
 
     componentDidMount() {
@@ -24,7 +24,7 @@ export default class ItemList extends Component {
                 <li 
                     key={i}
                     className="list-group-item"
-                    onClick={() => this.props.onItemSelected(41 + i)}
+                    onClick={() => this.props.onItemSelected(41+i)}
                 >
                     {label}
                 </li>

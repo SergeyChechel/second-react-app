@@ -2,6 +2,15 @@ export default class GotService {
     constructor() {
         this._apiBase = 'https://www.anapioficeandfire.com/api';
     }
+
+    getItem (id, type) {
+        switch (type) {
+            case 'char': return this.getCharacter(id);
+            case 'house': return this.getBook(id);
+            case 'book': return this.getHouse(id);
+            default: return 'there is not such a type of page'; 
+        }
+    }
     getResource = async (url) => {
         const res = await fetch(`${this._apiBase}${url}`);
         if (!res.ok) {
