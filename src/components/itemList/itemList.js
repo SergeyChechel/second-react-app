@@ -3,6 +3,8 @@ import Spinner from '../spinner/';
 import './itemList.css';
 import PropTypes from 'prop-types'
 import GotService from '../../services/gotService';
+import withData from '../withData';
+
 
 const ItemList = (props) => {
     
@@ -34,7 +36,6 @@ const ItemList = (props) => {
     }
     
     return render();
-
 }
 
 ItemList.defaultProps = {
@@ -45,35 +46,11 @@ ItemList.propTypes = {
     onItemSelected: PropTypes.func
 }
 
-const withData = (View, getData) => {
-    return class extends Component {
-        
-        state = {
-            data: null
-        }
-    
-        componentDidMount() {
-            getData()
-                .then(data => {
-                    this.setState({data});
-                })
-        }
-
-        
-        render () {
-            console.log(this.state)
-            const {data} = this.state;
-            console.log(data);
-            if (!data) {
-                return <Spinner/>
-            }
-
-            return <View {...this.props} data={data}/>
-        }
-
-    };
-};
-
 const {getAllCharacters} = new GotService();
 
 export default withData(ItemList, getAllCharacters);
+
+export {ItemList};
+
+
+
