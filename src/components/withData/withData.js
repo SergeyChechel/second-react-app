@@ -17,9 +17,9 @@ const withData = (View, getData) => {
         }
         
         render () {
-            console.log(this.state)
+            // console.log(this.state)
             const {data} = this.state;
-            console.log(data);
+            // console.log(data);
             if (!data) {
                 return <Spinner/>
             }

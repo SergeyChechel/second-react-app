@@ -1,5 +1,4 @@
-import React, {Component} from 'react';
-import Spinner from '../spinner/';
+import React from 'react';
 import './itemList.css';
 import PropTypes from 'prop-types'
 import GotService from '../../services/gotService';
@@ -26,7 +25,7 @@ const ItemList = (props) => {
     function render() {
         const {data} = props;
         const items = renderItems(data);
-        console.log(items);
+        // console.log(items);
 
         return (
             <ul className="item-list list-group">

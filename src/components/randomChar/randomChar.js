@@ -8,6 +8,7 @@ import PropTypes from 'prop-types'
 export default class RandomChar extends Component {
 
     gotService = new GotService();
+
     state = {
         char: {},
         loading: true,
@@ -16,11 +17,11 @@ export default class RandomChar extends Component {
 
     componentDidMount() {
         this.updateChar();
-        this.timerId = setInterval(this.updateChar, this.props.interval);
+        this.updateCharInterval = setInterval(this.updateChar, this.props.interval);
     }
 
     componentWillUnmount() {
-        clearInterval(this.timerId);
+        clearInterval(this.updateCharInterval);
     }
 
     onCharLoaded = (char) => {
@@ -33,6 +34,7 @@ export default class RandomChar extends Component {
 
     onError = (err) => {
         this.setState({
+            err,
             error: true,
             loading: false
         });
@@ -51,7 +53,7 @@ export default class RandomChar extends Component {
 
         const errorMessage = error ? <ErrorMessage/> : null;
         const spinner = loading ? <Spinner/> : null;
-        const content = !(loading || error) ? <View char={char}/> : null;
+        const content = !loading && !error ? <View char={char}/> : null;
 
         return (
             <div className="random-block rounded">

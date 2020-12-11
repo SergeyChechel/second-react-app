@@ -36,6 +36,7 @@ export default class App extends Component {
         if (this.state.error) {
             return <ErrorMessage/>
         }
+
         const char = this.state.showRandomChar ? <RandomChar/> : null;
 
         return (
@@ -68,10 +69,8 @@ export default class App extends Component {
                     </Container>
                 </div>
             </Router>
-
         );
     }
-
 }
 
 

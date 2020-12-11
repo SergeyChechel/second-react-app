@@ -17,3 +17,7 @@
     background-size: cover;
     height: 1000px;	
 }
+
+.container > h1 {
+    color: white;
+}
