@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import GotService from '../../services/gotService';
 import './itemDetails.css';
 
-const Field = ({item, field, label}) => {
+const Field = ({field, label, item}) => {
     return (
         <li className="list-group-item d-flex justify-content-between">
             <span className="term">{label}</span>

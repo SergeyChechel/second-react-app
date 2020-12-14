@@ -22,9 +22,10 @@ class BookPage extends Component {
         if (this.state.error) {
             return <ErrorMessage/>
         }
-
+        console.log(this.gotService.getAllBooks());
         return (
             <ItemList 
+                type="book"
                 onItemSelected={(itemId) => {
                     this.props.history.push(itemId)
                 }}

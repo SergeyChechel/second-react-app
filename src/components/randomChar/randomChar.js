@@ -66,7 +66,7 @@ export default class RandomChar extends Component {
 }
 
 RandomChar.defaultProps = {
-    interval: 15000
+    interval: 10000
 }
 
 RandomChar.propTypes = {

@@ -5,12 +5,14 @@ import GotService from '../../services/gotService';
 import withData from '../withData';
 
 
+
 const ItemList = (props) => {
     
     const renderItems = (arr) => {
-        return arr.map((item, i) => {
+        return arr.map((item) => {
             const {id} = item;
             const label = props.renderItem(item);
+            
             return (
                 <li 
                     key={id}
@@ -25,8 +27,7 @@ const ItemList = (props) => {
     function render() {
         const {data} = props;
         const items = renderItems(data);
-        // console.log(items);
-
+        
         return (
             <ul className="item-list list-group">
                 {items}
@@ -45,10 +46,8 @@ ItemList.propTypes = {
     onItemSelected: PropTypes.func
 }
 
-const {getAllCharacters} = new GotService();
 
-export default withData(ItemList, getAllCharacters);
-
+export default withData(ItemList, new GotService());
 export {ItemList};
 
 
