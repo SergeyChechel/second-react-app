@@ -7,7 +7,7 @@ import withData from '../withData';
 
 
 const ItemList = (props) => {
-    
+
     const renderItems = (arr) => {
         return arr.map((item) => {
             const {id} = item;
@@ -34,7 +34,7 @@ const ItemList = (props) => {
             </ul>
         );
     }
-    
+
     return render();
 }
 
@@ -45,8 +45,7 @@ ItemList.defaultProps = {
 ItemList.propTypes = {
     onItemSelected: PropTypes.func
 }
-
-
+    
 export default withData(ItemList, new GotService());
 export {ItemList};
 
