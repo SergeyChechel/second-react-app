@@ -3,7 +3,7 @@ import Spinner from '../spinner/';
 
 
 
-const withData = (View, gotService) => {
+const withData = (View) => {
     return class extends Component {
         
         state = {
@@ -11,15 +11,7 @@ const withData = (View, gotService) => {
         }
     
         componentDidMount() {
-            const {getAllCharacters, getAllHouses, getAllBooks} = gotService;
-            let getData;
-            switch (this.props.type) {
-                case 'char': getData = getAllCharacters; break;
-                case 'book': getData = getAllBooks; break;
-                case 'house': getData = getAllHouses; break;
-                default: getData = getAllCharacters;
-            }
-
+            const getData = this.props.getData;
             getData()
                 .then(data => {
                     this.setState({data});

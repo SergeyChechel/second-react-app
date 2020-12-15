@@ -32,7 +32,6 @@ export default class HousePage extends Component {
 
         const houseList = (
             <ItemList 
-                type="house"
                 onItemSelected={this.onHouseSelected}
                 getData={this.gotService.getAllHouses}
                 renderItem={({name, region}) => `${name} (${region})`}

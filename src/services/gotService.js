@@ -1,6 +1,6 @@
 export default class GotService {
     constructor() {
-        this._apiBase = 'https://www.anapioficeandfire.com/api';
+        this._apiBase = 'https://www.anapioficeandfire.com/api'; // https://www.anapioficeandfire.com/api/characters?page=5&pageSize=10
     }
 
     getItem(id, type) {
@@ -44,7 +44,7 @@ export default class GotService {
     }
 
     isSet(data) {
-        return data ? data : 'no data :('; 
+        return !data || data.length  < 2 ? 'no data :(' : data; 
     }    
     
     _extractId = (item) => {

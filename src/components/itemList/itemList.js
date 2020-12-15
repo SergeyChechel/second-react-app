@@ -1,7 +1,6 @@
 import React from 'react';
 import './itemList.css';
 import PropTypes from 'prop-types'
-import GotService from '../../services/gotService';
 import withData from '../withData';
 
 
@@ -46,7 +45,7 @@ ItemList.propTypes = {
     onItemSelected: PropTypes.func
 }
     
-export default withData(ItemList, new GotService());
+export default withData(ItemList);
 export {ItemList};
 
 
