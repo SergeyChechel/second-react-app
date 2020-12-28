@@ -35,6 +35,11 @@ describe('Testing <RandomChar/>', () => {
             expect(char.state().loading).toBeFalsy();
             expect(char.state().error).toBeTruthy();
         });
+
+        it('testing updateChar', () => {
+            char.instance().updateChar();
+            expect(char.state().loading).toBeFalsy();
+        });
     })
     
     
